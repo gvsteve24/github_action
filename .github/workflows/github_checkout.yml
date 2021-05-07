@@ -1,14 +1,12 @@
-name: github checkout
-
-on: push
-
+name: learn-github-actions
+on: [push]
 jobs:
-  checkout:
+  checkout-bats-version:
     runs-on: ubuntu-latest
-
     steps:
     - uses: github/checkout@v2
-    - name: Run pwd
-    - run: pwd
-    - name: Run ls -al
-    - run: ls -al
+    - uses: action/setup-python@v1
+    - uses: BSFishy/pip-action@v1
+      with:
+        requirements: requirements.txt
+    - run: python test.py
