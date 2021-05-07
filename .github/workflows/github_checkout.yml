@@ -8,9 +8,7 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: '3.8.x'
-    - run: conda create -n test_venv python=3.8
-    - run: conda init bash
-    - run: conda activate test_venv
+    - uses: s-weigand/setup-conda@v1
     - run: pip install cython
     - run: pip install -r requirements.txt
     - run: python test.py
