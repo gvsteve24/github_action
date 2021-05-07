@@ -9,6 +9,7 @@ jobs:
       with:
         python-version: '3.8.x'
     - run: conda create -n test_venv python=3.8
+    - run: conda init bash
     - run: conda activate test_venv
     - run: pip install cython
     - run: pip install -r requirements.txt
