@@ -2,5 +2,5 @@ import torchvision
 
 model = torchvision.models.segmentation.fcn_resnet50(pretrained=True, progress=True)
 
-for key, value in dict(model.children()):
+for key, value in dict(model.children()).item():
     print(key)
